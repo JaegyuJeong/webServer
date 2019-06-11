@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script>
+                    var str1="꽝! 다음을 기약하세요";
+                    var str2="당첨! 축하합니다.";
+                    var txt = "마우스가 전구 위에 있으면 켜지고, 벗어나면 꺼집니다.";
+                    var txt2 = "전구를 켤까요?"
+                    function question(){
+                        var answer=confirm(txt2);
+                        if(answer==true){
+                            document.write("<h3>전구상태:On</h3>")
+                            document.write("<img src='lighton.png'/>");
+                        }else {
+                            document.write("<h3>전구상태:Off</h3>")
+                            document.write("<img src='lightoff.png'/>");
+                        }
+                    }
+                </script>
+                <style>
+                    div{width:50px;height:50px; border-radius: 50px; display: inline-block}
+                    img{width:50px;height:80px; float:left;}
+                    #b1{background: red}
+                    #b2{background: green}
+                    #b3{background: blue}
+                    #b4{background: orange}
+                    #b5{background: skyblue}
+                </style>
+    </head>
+    <body>
+        <h4> MouseOver/MouseLeave 이벤트처리</h4>
+        <img src ="lightoff.png" 
+        onmouseover="this.src='lighton.png';"
+        onmouseleave="this.src='lightoff.png';" /> <br><br>
+        <button onclick="alert(txt)">전구 on/off 방법</button> 
+        <br><br>
+        <button onclick="question(txt2)">전구 on/off 시도</button> 
+        
+        <h4>2. MouseClick 이벤트처리</h4>
+        경품추첨! 원하는 공을 클릭하세요.<br><br>
+        <div id="b1" onclick="document.write(str1);"></div>
+        <div id="b2" onclick="document.write(str2);"></div>
+        <div id="b3" onclick="document.write(str1);"></div>
+        <div id="b4" onclick="document.write(str1);"></div>
+        <div id="b5" onclick="document.write(str1);"></div>
+    </body>
+</html>

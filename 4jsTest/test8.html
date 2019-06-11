@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            var  student=[88,92,76];
+
+            document.write("<hr> 배열 student크기:" + student.length + "<br>");
+            for (i=0;i<student.length;i++) {
+                document.write("student["+i+"]=");
+                document.write(student[i]+"<br>");
+            }
+
+            student[6]=84;
+            student[4]="결석";
+            document.write("<hr>배열 student크기:"+student.length+"<br>");
+            for(i=0;i<student.length;i++){
+                document.write("student["+i+"]=");
+                document.write(student[i]+"<br>");
+            }
+            </script>
+    </body>
+</html>

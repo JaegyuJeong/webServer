@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #f1 {width:70px; height:70px;}
+            #txt1 {background:"orange";}
+        </style>
+        <script>
+            function off(recurv){
+                var obj1 = document.getElementById("f1");
+                obj1.src = "lightoff.png";
+                var obj2 = document.getElementById("txt1");
+                obj2.style.color="blue";
+                setTimeout(recurv,1000);
+            }
+      
+            var recurv = function () {
+                var obj1 = document.getElementById("f1");
+                obj1.src = "lighton.png";
+                var obj2 = document.getElementById("txt1");
+                obj2.style.color="black";
+            }
+        </script>
+    </head>
+    <body>
+        <img id="f1" src="lighton.png" onclick="off(recurv)">
+        <span id = "txt1"> 자바스크립트</span>
+    </body>
+</html>

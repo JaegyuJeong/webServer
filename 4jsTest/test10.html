@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            var a ="globalA", b="globalB",c="globalC";
+            function F1(){ //F1.prototype ==> Object.prototype ==> F1()
+                            // constructor 객체 ==> Function.prototype==> Object.prototype
+                this.b = "정재규";
+                var b = "localB";
+                // var d = "localD";
+
+                document.write("함수 f1 () 내부에서 출력 <br>");
+                document.write("a=" +a+ "<br>");
+                document.write("b=" +b+ "<br>");
+                document.write("this.b=" +this.b+ "<br>");
+                document.write("c=" +c+ "<br>");
+                document.write("d=" +d+ "<br><hr>");
+            }
+
+            // f1();
+            var f = new F1(); //f는 window에 멤버 변수
+            var d;
+            document.write("함수 f1 () 외부에서 출력 <br>");
+            document.write("a=" +a+ "<br>");
+            document.write("b=" +b+ "<br>");
+            document.write("this.b=" +this.b+ "<br>");
+            document.write("c=" +c+ "<br>");
+            document.write("d=" +d+ "<br><hr>");
+            </script>
+    </body>
+</html>

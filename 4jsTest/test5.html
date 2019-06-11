@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            var score;
+            var grade;
+
+            document.write("<h3>학점 판정</h3>");
+            score=prompt("성적을 입력하세요");
+            
+            switch(parseInt(score/10)){
+                
+                case 10,9:grade="A";break;
+                case 8:grade="B";break;
+                case 7:grade="C";break;
+                case 6:grade="D";break;
+                default:grade="F";
+
+            }
+            document.write("<hr>학점 판정 결과:");
+            document.write(score + "(" + grade + ")");
+         </script>
+    </body>
+</html>

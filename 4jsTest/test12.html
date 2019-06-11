@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>function myButtonHandler(a,b){
+            alert(document.forms[a][b].value);
+        }
+            </script>
+    </head>
+    <body>
+        <form name="id_form">
+            ID <input type="text" name ="id">
+            <button onclick="myButtonHandler('id_form','id')" >확인</button>
+        </form>
+        <form name="pw_form">
+                PW <input type="text" name ="pw">
+                <button onclick="myButtonHandler('pw_form','pw')" >확인</button>
+            </form>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            function f1(a,b,c){
+                //document.write(a+b);
+                c(a+b);
+            }
+            //document.write(f1(1,2));
+            // function print(msg){
+            //     document.write(msg);
+            // }
+
+            // var print = function (msg){
+            //     document.write(msg);
+            // }
+            //f1(1,2,print);
+
+            f1(1,2,function (msg){
+                document.write(msg);}
+                );
+            </script>
+    </body>
+</html>

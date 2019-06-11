@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function question(){
+                // var name=prompt("이름은?");
+                var kor=prompt("국어시험 성적은?");
+                var math=prompt("수학시험 성적은?");
+                var total = Number(kor)+Number(math);
+                //var avg=total/2;
+                var str;
+                if((kor+10)>= 80 && ++math >= 80){
+                    str="참잘했어요~"+kor+":"+math;
+                }else{
+                    str="잘했어요~"+kor+":"+math;
+                }
+                // +"<tr><td>이름</td><td>"+name+"</td></tr>"
+                // +"<tr><td>국어</td><td>"+kor+"</td></tr>"
+                // +"<tr><td>수학</td><td>"+math+"</td></tr>"
+                // +"<tr><td>총점</td><td>"+total+"</td></tr>"
+                // +"<tr><td>평균</td><td>"+avg+"</td></tr>"
+                // +"</table>";
+                var e1=document.getElementById("result");
+                el.innerHTML=str;
+            }
+         </script>
+    </head>
+    <body>
+       <button onclick="question()">질문</button>
+       <br><br>
+       <div id="result"></div>
+    </body>
+</html>

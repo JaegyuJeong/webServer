@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Person(name, id, pw) {
+                this.name=name;
+                this.id=id;
+                this.pw=pw;
+            }
+            Person.prototype.returnValue= function() {
+                console.log(this.name+ ":" +this.id+ ":" +this.pw);
+                return this.name+ ":" +this.id+ ":" +this.pw;
+            }
+            function member_insert() {
+                const name=document.forms["member_insert_form"]["name"].value;
+                const id=document.forms["member_insert_form"]["id"].value;
+                const pw=document.forms["member_insert_form"]["pw"].value;
+                const p=new Person(name,id,pw); 
+                var member_insert_div;
+                console.log(p);
+                // alert(p.returnValue());
+                
+                setTimeout(f,3000);
+            }
+            
+                function f() {
+                    alert();
+                    var member_insert_div=document.getElementById("member_insert_div");
+                    member_insert_div.innerHTML="회원가입되셨습니다.<br>"
+                    
+                    //미션 1. login화면으로 바꾸기
+                    +"<form name = 'member_insert_form'>"
+                    +" <h3>로그인화면</h3>"
+                    +" ID <input name='id'><br>"
+                    +" PW<input type='password' name='pw'><br>"
+                    +" <button onclick=''>로그인</button></form>";
+                }
+        </script>
+    </head>
+    <body>
+        <h1>My Web Site</h1>
+        <div id="member_insert_div">
+            <form name = "member_insert_form">
+                <h3>회원가입</h3>
+                NAME <input name="name"> <br>
+                ID <input name="id"><br>
+                PW<input type='password' name="pw"><br>
+                <button onclick="member_insert()">회원가입</button>
+            </form>
+        </div>
+        <img src='lighton.png'>
+    </body>
+</html>

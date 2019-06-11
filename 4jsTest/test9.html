@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+         <form name="form1">
+            이    름: <input type="text" name="stuName"/><br>
+            국어성적: <input type="text" name="kor"/><br>
+            수학성적: <input type="text" name="math"/><hr>
+            <button onclick="compute();"> 성적처리 결과</button>
+         </form>
+         <script>
+             function compute() {
+                 var total;
+                 total = parseInt(form1['kor'].value)+parseInt(form1['math'].value);
+                 avg=total/2;
+                 alert(form1['stuName'].value+"학생의 평균성적은"+avg+"입니다.");
+             }
+        </script>
+    </body>
+</html>
