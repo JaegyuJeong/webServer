@@ -220,15 +220,13 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Company</h1> 
+  <h1>Company</h1>
   <p>We specialize in blablabla</p> 
   <form>
-    <%
-    if(status) { %>
+    <% if(loginState){ %>
       <h1><%= status%>님 로그인되셨습니다.</h1>
-      <button id='logout' style='color:black'>로그아웃</button>
-    <%
-    }else{ %>
+      <button id='logout' style='color:black'>로그아웃</button>  
+    <% }else{ %>
       <div id="login_result_div" class="input-group">
         <input id="login_email" type="email" class="form-control" size="50" placeholder="Email Address" required>
           <div class="input-group-btn">

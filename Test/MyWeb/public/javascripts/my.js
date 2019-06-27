@@ -21,16 +21,26 @@ $(document).ready(function() {
             email
         };
         $.post("/login",send_params, function(data, status) {
-
-                const parsed_data=JSON.parse(data);
-                $('#login_result_div').html(
-                    `<h1>${parsed_data.msg}</h1>
-                    <button id='logout' style='color:black'>로그아웃</button> `);
+            try {
+                alert(JSON.parse(data).msg);
+                $("#login_email").val()="";
+            }catch(err){
+                window.location.reload(true);
+            }
+            
+            // if(data) {
+            //     const parsed_data=JSON.parse(data);
+            //     if(parsed_data.msg) {
+            //         alert(parsed_data.msg);
+            //     }else{
+            //         location.reload(true);
+            //     }
+            // }
         });
     });
     $('#logout_btn').click(function () {                  
         $.get("/logout",function (data,status) {
-            //location.reload();
+            location.reload();
         });        
     });
 
