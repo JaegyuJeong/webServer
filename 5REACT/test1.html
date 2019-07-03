@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel" src="counter.js">
+
+            class Hello extends React.Component{
+                render() {
+                    const helloStyle={
+                        fontSize:24,
+                        fontWeight:"bold",
+                        color:"blue"
+                    };
+                
+                    return (
+                       <React.Fragment>
+                            <div style={helloStyle}>hello Lebron</div>
+                            <div style={helloStyle}>hello Kawhai</div>
+                            <div style={helloStyle}>hello Anthony</div>
+                        </React.Fragment>
+                    );
+                };
+            }
+            
+            class HelloBox extends React.Component{
+                render() {
+                    const helloBoxStyle={
+                        width:200,
+                        height:200,
+                        backgroundColor:"yellow"
+                    };
+                    return (
+                        <div style={helloBoxStyle}>
+                            <Hello />
+                            {this.props.children}
+                        </div>
+                    );
+                }
+            }
+
+            function b() {
+                return <HelloBox>aaaaaaa</HelloBox>;
+            }
+
+            ReactDOM.render(
+                b(), 
+                document.querySelector("#container")
+            );
+        </script>
+    </body>
+</html>

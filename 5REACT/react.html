@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+            <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+            <script crossorigin src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+            <style>
+                #container {
+                    padding: 50px;
+                    background-color: #EEE;}
+                #container h1 {
+                    font-size: 144px;
+                    font-family: sans-serif;
+                    color: #0080A8;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+        ReactDOM.render(
+            <div>
+                <h1>Batman</h1>
+                <h1>Iron Man</h1>
+                <h1>Nicolas Cage</h1>
+                <h1>Mega Man</h1>
+            </div>,
+            document.querySelector("#container")
+        );
+        </script>
+        </body>
+    </html>
