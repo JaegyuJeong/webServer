@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>search car information</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            <script src="javascripts/my.js"></script>         
+       <style>
+           h2{
+               text-align: center;
+               color: white;
+               font-weight: 900;
+           }
+           .div_design {
+               text-align: center;
+               margin-top: 20%;
+               color: aquamarine;
+           }
+           .bt {
+               margin-left: 34px;
+               width: 96px;
+               height: 41px;
+               font-size: 15px;
+               color:#999;
+               border:2px solid #ddd
+           }
+           .search_btn{
+               text-align: center;
+               margin-left: 44px;
+               margin-top: 50px;
+               width: 150px;
+               height: 50px;
+           }
+           input {
+               margin-left: 15px;
+               width: 300px;
+               height: 22px;
+               font-size: 15px;
+               color:#999;
+               border:2px solid #ddd
+           }
+       </style>
+    </head>
+    <body style="background-color: black">
+        <div>
+            <h2>자동차 일반 사양 정보 조회</h2>
+        </div>
+        <div style="float: left;">
+            <select id="searchType" class="bt" id="search_type" size="1">
+                <option selected>조회타입</option>
+                <option value="0">차량번호</option>
+                <option value="1">차대번호</option>
+            </select>
+        </div>
+        <div>
+            <input type="text" id="car_num_input" placeholder="차량(대)번호를 띄워 쓰기 없이 입력하세요."/>
+        </div>
+        
+        <div>
+            <button id="carBasicInfoSearch_btn" class="search_btn"type="button">조회</button>
+        </div>
+        <div id="carBasicInfoSearch_div" class="div_design">
+            <p>원하는 차량을 조회해 보세요!</p>
+            </div>
+    </body>
+</html>

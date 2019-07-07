@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CREDIT CAR</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/93cebd3bd3.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="/javascripts/my.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: black;
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #012161; /* Royal Navy Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+
+  .buttonStyle {
+    color: #2f2f2f;
+    font-weight: bold;
+    border-radius: 6%;
+    width: 80px;
+    height: 44px;
+  }
+
+  .profileStyle {
+    width:44px; height:44px;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">CREDIT CAR</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li></li>
+        <li><div class="profileStyle"><img src="/images/man.jpg" width="40" height="40"></div></li>
+        <li></li>
+        <li><button id="logout_btn" class="buttonStyle">Log out</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h1 class="margin">SUPER CAR</h1>
+  <img src="/images/bg_car_1.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <h2>used car trade</h2>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">원하는 차를 검색하세요!</h3>
+  <p>우리는 블록체인 기술을 통해 믿을 수 있는 슈퍼카만 취급하고 있습니다.</p>
+  <a href="/search_carinfo_template" target="_blank" >
+    <button onclick="window.open('/search_carInfo_template','_blank',
+    'scrollbars=yes, resizable=yes,width=500, height=680')" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search" ></span> Search</button>
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">추천하는 슈퍼카 TOP3</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>슈퍼카 입문자에게 추천합니다.</p><p>누구나 가질 수 있는 슈퍼카 Audi R8!!</p>
+      <img src="/images/audi_r8.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>특별함을 원하시나요? </p><p>그럼, 당신의 선택은 이것입니다. Bugatti Veyron!!</p>
+      <img src="/images/bugatti.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>SUV를 찾고 계신가요? </p><p>SUV계의 슈퍼카 Lamborghini Urus!! </p>
+      <img src="/images/lamborgini_urus.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>We only deal Super Car </p> 
+</footer>
+
+</body>
+</html>
