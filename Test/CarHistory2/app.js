@@ -37,6 +37,7 @@ app.use('/login',require('./routes/login'));
 app.use('/logout',require('./routes/logout'));
 app.use('/search_carinfo_template',require('./routes/search_carinfo_template'));
 app.use('/search_carinfo',require('./routes/search_carinfo'));
+app.use('/update_carinfo',require('./routes/update_carinfo'));
 
 
 // catch 404 and forward to error handler

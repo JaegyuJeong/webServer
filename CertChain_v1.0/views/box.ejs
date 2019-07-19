@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+
+    <% include header %>
+
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/blockchain3.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2 class="page-title">보관함</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">보관함</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+
+    <!-- File Download progress bar modal  start-->
+    <div id="preparing-file-modal" title="Preparing report..." style="display: none;">
+        문서 전송 중입니다. 잠시만 기다려주세요...
+     
+        <div class="ui-progressbar-value ui-corner-left ui-corner-right" style="width: 100%; height:22px; margin-top: 20px;"></div>
+    </div>
+    <div id="error-modal" title="Error" style="display: none;">
+        There was a problem generating your report, please try again.
+    </div>
+    <!-- File Download progress bar modal  end-->
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Newsletter -->
+                    <div class="single-widget-area mb-100">
+                        <div class="newsletter-form">
+                            <h5>자격증/증명서 보관하기</h5>
+                            <p>문서의 보관 유효기간은 1년 입니다.</p>
+                            문서이름<input type="text" name="doc_title" id="doc_title" class="form-control"
+                                placeholder="자격증/증명서 이름을 입력해주세요">
+                            발급기관<input type="text" name="doc_agency" id="doc_agency" class="form-control"
+                                placeholder="발급기관을 입력해주세요.">
+                            비밀번호<input type="password" name="doc_password" id="doc_pw" class="form-control"
+                                placeholder="보안을 위해 사용자 비밀번호를 다시 한 번 입력해주세요">
+                            <form method="post" enctype="multipart/form-data" action="upload">
+                                문서<input type="file" name="doc_filename" id="doc_filename" class="form-control"
+                                    placeholder="파일을 업로드 해주세요">
+                                <button class="btn roberto-btn w-100" id="doc_insert_btn">문서 보관</button>
+                            </form>
+                            
+
+                        </div>
+                    </div>
+
+                    <!-- Recent Post -->
+                    <div class="single-widget-area mb-100">
+                        <h4 class="widget-title mb-30">내가 보관중인 문서 목록</h4>
+                        <button type="button" class="btn roberto-btn w-100" id="doc_search_btn">보관중인 문서 조회</button>
+
+                        <!-- Single Recent Post -->
+                        <span id="doc_list"></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Blog Area End -->
+
+    <% include footer %>
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/roberto.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+
+    <script src='/js/filedownload.js' ></script>
+    <!-- Main Javascript -->
+    <script src="js/main.js"></script>
+
+   
+
+</body>
+
+</html>
