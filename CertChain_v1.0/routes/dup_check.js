@@ -17,10 +17,10 @@ router.post('/', function (req, res, next) {
             }
 
             console.log("DB연결됨");
-            const sql = `select count(email) as count_email from certchain_account WHERE email='${req.body.email}'`;
+            const sql = `select count(email) as count_email from certchain_account WHERE email=?`;
             console.log(sql);
 
-            conn.query(sql, (err, result, fields) => {
+            conn.query(sql, [req.body.email], (err, result, fields) => {
                 if (err) {
                     console.error(err.message);
                 } else {

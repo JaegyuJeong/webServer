@@ -7,7 +7,10 @@ router.get('/', function(req, res, next) {
     email:req.session.email,
     pw:req.session.pw,
     name:req.session.name,
-    loginState: req.session.loginState
+    loginState: req.session.loginState,
+    dupState: req.session.dupState,
+    dupEmail: req.session.dupEmail,
+    account_page_state: req.session.account_page_state = false
   });
 });
 

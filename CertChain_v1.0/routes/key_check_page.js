@@ -8,7 +8,8 @@ router.get('/', function (req, res, next) {
       email: req.session.email,
       pw: req.session.pw,
       name: req.session.name,
-      loginState: req.session.loginState
+      loginState: req.session.loginState,
+      account_page_state: req.session.account_page_state = false
     });
   } else {
     console.log("비정상적인 접근 - /key_check_page")

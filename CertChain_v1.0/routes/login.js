@@ -21,10 +21,10 @@ router.post('/', function (req, res, next) {
         }
 
         console.log("DB연결됨");
-        const sql = `select * from certchain_account where email='${req.body.email}' and password='${req.body.pw}'`;
+        const sql = `select * from certchain_account where email=? and password=?`;
         console.log(sql);
 
-        conn.query(sql, (err, result, fields) => {
+        conn.query(sql, [req.body.email, req.body.pw], (err, result, fields) => {
             if (err) {
                 console.error(err.message);
                 const msg = { msg: "아이디 또는 비밀번호를 잘못 입력하셨습니다." }

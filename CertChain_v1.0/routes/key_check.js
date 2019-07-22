@@ -32,44 +32,45 @@ router.post('/', function (req, res, next) {
                 return console.error(err.message);
             }
             console.log("DB연결됨");
-            const sql = `select * from certchain_account where no=(select account_no from certchain_key where encoded_key='${req.body.encoded_key}')`;
+            const sql = `select * from certchain_account where no=(select account_no from certchain_key where encoded_key=?)`;
             console.log(sql);
 
-            conn2.query(sql, (err, result, fields) => {
+            conn2.query(sql, [req.body.encoded_key], (err, result, fields) => {
                 if (err) {
                     console.error(err.message);
                 } else {
-                    console.log(result, fields);
+                    console.log(result);
                     select_account_result = {
-                        name: result[0].name, 
+                        name: result[0].name,
                         email: result[0].email
                     };
+
+                    console.log("DB연결됨");
+                    const sql = `select * from certchain_box where account_no=(select account_no from certchain_key where encoded_key=?)`;
+                    console.log(sql);
+
+                    conn.query(sql, [req.body.encoded_key], (err, result, fields) => {
+                        if (err) {
+                            console.error(err.message);
+                        } else {
+                            console.log(result);
+                            result.forEach(element => {
+                                select_box_result.push({
+                                    title: element.title,
+                                    agency: element.agency,
+                                    create_at: element.create_at
+                                });
+                            });        
+                            select_result = [select_account_result, select_box_result];
+                            res.json(JSON.stringify(select_result));           
+                        }
+                        conn.end();
+                    })
                 }
                 conn2.end();
             })
         });
 
-        console.log("DB연결됨");
-        const sql = `select * from certchain_box where account_no=(select account_no from certchain_key where encoded_key='${req.body.encoded_key}')`;
-        console.log(sql);
-
-        conn.query(sql, (err, result, fields) => {
-            if (err) {
-                console.error(err.message);
-            } else {
-                console.log(result, fields);
-                result.forEach(element => {
-                    select_box_result.push({
-                        title: element.title,
-                        agency: element.agency,
-                        create_at: element.create_at
-                    });
-                });
-                select_result = [select_account_result, select_box_result];
-                res.json(JSON.stringify(select_result));
-            }
-            conn.end();
-        })
     });
 });
 

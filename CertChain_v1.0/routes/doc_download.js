@@ -20,9 +20,9 @@ router.post('/', function (req, res) {
             return console.error(err.message);
         }
         console.log("DB연결됨");
-        const sql = `select filepath from certchain_box where no ='${req.body.doc_no}'`;
+        const sql = `select filepath from certchain_box where no = ?`;
         console.log(sql);
-        conn.query(sql, (err, result, fields) => {
+        conn.query(sql, [req.body.doc_no], (err, result, fields) => {
             if (err) {
                 console.error(err.message);
             } else {

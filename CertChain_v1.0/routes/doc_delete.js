@@ -16,10 +16,10 @@ router.post('/', function (req, res, next) {
             return console.error(err.message);
         }
         console.log("DB연결됨");
-        const sql = `delete from certchain_box where no='${req.body.box_no}'`;
+        const sql = `delete from certchain_box where no = ?`;
         console.log(sql);
 
-        conn.query(sql, (err, result, fields) => {
+        conn.query(sql, [req.body.box_no], (err, result, fields) => {
             if (err) {
                 console.error(err.message);
                 const msg = { msg: "err - errcode 001 처리실패" };

@@ -19,10 +19,10 @@ router.post('/', function (req, res, next) {
             }
             const filepath = "./upload/" + req.session.email + "_" + req.body.new_filepath;
             console.log("DB연결됨");
-            const sql = `insert into certchain_box(account_no, title, agency, filepath) values((select no from certchain_account where email='${req.session.email}'), '${req.body.title}', '${req.body.agency}', '${filepath}')`;
+            const sql = `insert into certchain_box(account_no, title, agency, filepath) values((select no from certchain_account where email=?), ?, ?, ?)`;
             console.log(sql);
 
-            conn.query(sql, (err, result, fields) => {
+            conn.query(sql, [req.session.email, req.body.title, req.body.agency, filepath], (err, result, fields) => {
                 if (err) {
                     console.error(err.message);
                 } else {

@@ -21,10 +21,10 @@ router.post('/', function (req, res, next) {
             }
 
             console.log("DB연결됨");
-            const sql = `insert into certchain_account(email, password, name) values('${req.body.email}', '${req.body.pw}', '${req.body.name}')`
+            const sql = `insert into certchain_account(email, password, name) values(?, ?, ?)`
             console.log(sql);
 
-            conn.query(sql, (err, result, fields) => {
+            conn.query(sql, [req.body.email, req.body.pw, req.body.name], (err, result, fields) => {
                 if (err) {
                     console.error(err.message);
                     res.json(JSON.stringify(result));

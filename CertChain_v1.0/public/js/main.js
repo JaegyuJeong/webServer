@@ -8,8 +8,8 @@ $(document).ready(function () {
         const isEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
         if (name && email && pw && pw_check) {
             if (!isEmail.test(email)) {
-                alert("5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.");
-            } else if(pw != pw_check){
+                alert("이메일 형식이 맞지 않습니다. [형식 : ___@___.___]");
+            } else if (pw != pw_check) {
                 alert("비밀번호가 일치하지 않습니다.");
             } else {
                 const send_params = {
@@ -53,25 +53,18 @@ $(document).ready(function () {
 
 
     $("#delete_account_btn").click(function () {
-
         if (confirm("정말 탈퇴하시겠습니까?")) {
-            let pw = prompt("확인을 위해 비밀번호를 입력해주세요.", "");
-            if (pw == null) {
-                //alert("취소");
-            } else {
-                const send_params = {
-                    pw
-                }
-                $.post("/delete_account", send_params, function (data, status) {
-                    try {
-                        alert(JSON.parse(data).msg);
-                        window.location.reload(true);
-                    } catch (err) {
-                        window.location.reload(true);
-                    }
-                });
-            }
+            const send_params = {
 
+            }
+            $.post("/delete_account", send_params, function (data, status) {
+                try {
+                    alert(JSON.parse(data).msg);
+                    window.location.reload(true);
+                } catch (err) {
+                    window.location.reload(true);
+                }
+            });
         } else {
         }
     });
@@ -113,6 +106,45 @@ $(document).ready(function () {
         });
     });
 
+    $("#account_page_pw_btn").click(function () {
+        const pw = $("#account_page_pw").val();
+        let real_pw = "";
+        if (pw) {
+            $.post("/pw_check", { pw: pw }, function (data, status) {
+                try {
+                    alert(JSON.parse(data).msg);
+                } catch (err) {
+                    window.location.reload(true);
+                }
+            });
+        } else {
+            alert("입력되지 않은 값이 있습니다. 다시 입력하세요.");
+        }
+    });
+
+    $("#update_pw_btn").click(function () {
+        const old_pw = $("#old_pw").val();
+        const new_pw1 = $("#new_pw1").val();
+        const new_pw2 = $("#new_pw2").val();
+        if(old_pw && new_pw1 && new_pw2){
+            const send_params = {
+                old_pw,
+                new_pw1,
+                new_pw2
+            };
+            $.post("/update_account", send_params , function (data, status) {
+                try {
+                    alert(JSON.parse(data).msg);
+                } catch (err) {
+                    alert("정상적으로 변경되었습니다.")
+                    window.location.reload(true);
+                }
+            });
+        }else{
+            alert("입력되지 않은 값이 있습니다. 다시 입력하세요.");
+        }
+    });
+
 
     $("#doc_insert_btn").click(function () {
         const title = $("#doc_title").val();
@@ -136,7 +168,7 @@ $(document).ready(function () {
             alert("입력되지 않은 값이 있습니다. 다시 입력하세요.");
         }
     });
-    
+
 
     $("#doc_search_btn").click(function () {
         const send_params = {
@@ -149,29 +181,29 @@ $(document).ready(function () {
             for (x in parsedData) {
                 result +=
                     "<div class='single-recent-post d-flex' >" +
-                        "<!-- Thumb -->" +
-                        "<div class='post-thumb'>" +
-                            "<a href='#'><img src='img/box-filled.png' alt=''></a>" +
-                        "</div>" +
-                        "<!-- Content -->" +
-                        "<div class='post-content'>" +
-                            "<!-- Post Meta -->" +
-                            "<div class='post-meta'>" +
-                                "<a class='post-author'>" + parsedData[x].create_at.substr(0, 10) + "</a>" +
-                                "<a class='post-tutorial'>" + parsedData[x].agency + "</a>" +
-                            "</div>" +
-                            "<p>" + parsedData[x].title + "</p>" +
-                        "</div>"+
-                        "<button class='btn roberto-btn w-100' id='doc_download_" + parsedData[x].no + "'><img src='img/download.png' ></button>" +
-                        "<button class='btn roberto-btn w-100' id='doc_delete_" + parsedData[x].no + "'><img src='img/trash.png'></button>" +
+                    "<!-- Thumb -->" +
+                    "<div class='post-thumb'>" +
+                    "<a href='#'><img src='img/box-filled.png' alt=''></a>" +
+                    "</div>" +
+                    "<!-- Content -->" +
+                    "<div class='post-content'>" +
+                    "<!-- Post Meta -->" +
+                    "<div class='post-meta'>" +
+                    "<a class='post-author'>" + parsedData[x].create_at.substr(0, 10) + "</a>" +
+                    "<a class='post-tutorial'>" + parsedData[x].agency + "</a>" +
+                    "</div>" +
+                    "<p>" + parsedData[x].title + "</p>" +
+                    "</div>" +
+                    "<button class='btn roberto-btn w-100' id='doc_download_" + parsedData[x].no + "'><img src='img/download.png' ></button>" +
+                    "<button class='btn roberto-btn w-100' id='doc_delete_" + parsedData[x].no + "'><img src='img/trash.png'></button>" +
                     "</div>";
             }
             $("#doc_list").html(result);
         });
     });
 
-    $(document).on("click", "button[id^=doc_download_]", function(){ 
-        var id = $(this).attr("id"); 
+    $(document).on("click", "button[id^=doc_download_]", function () {
+        var id = $(this).attr("id");
         var doc_no = id.replace("doc_download_", "");
         alert("추후 서비스할 예정입니다.");
         /*
@@ -185,11 +217,11 @@ $(document).ready(function () {
         } else {
             alert("정상적인 경로가 아닙니다. 다시 시도해주세요.");
         }
-        */  
+        */
     });
 
-    $(document).on("click", "button[id^='doc_delete_']", function(){ 
-        var id = $(this).attr("id"); 
+    $(document).on("click", "button[id^='doc_delete_']", function () {
+        var id = $(this).attr("id");
         var box_no = id.replace("doc_delete_", "");
 
         if (box_no) {
@@ -202,7 +234,7 @@ $(document).ready(function () {
             });
         } else {
             alert("정상적인 경로가 아닙니다. 다시 시도해주세요.");
-        }  
+        }
     });
 
     $("#key_check_btn").click(function () {
@@ -214,12 +246,12 @@ $(document).ready(function () {
             $.post("/key_check", send_params, function (data, status) {
                 const parsedData = JSON.parse(data);
                 let x;
-                let result = "<h4 class='widget-title mb-30'>키 값 소유자 정보</h4>"+
-                        "<p>이름 : "+parsedData[0].name+"</p>"+
-                        "<p>이메일 : "+parsedData[0].email+"</p>"+
-                        "<h4 class='widget-title mb-30'>조회한 키 값이 보유한 문서 목록</h4>";
-
-                for (x in parsedData) {
+                let result = "<h4 class='widget-title mb-30'>키 값 소유자 정보</h4>" +
+                    "<p>이름 : " + parsedData[0].name + "</p>" +
+                    "<p>이메일 : " + parsedData[0].email + "</p>" +
+                    "<h4 class='widget-title mb-30'>조회한 키 값이 보유한 문서 목록</h4>";
+                
+                for (x in parsedData[1]) {
                     result +=
                         "<div class='single-recent-post d-flex' >" +
                         "<!-- Thumb -->" +
@@ -307,7 +339,7 @@ $(document).ready(function () {
                     "<a class='post-tutorial'>" + parsedData[x].memo + "</a>" +
                     "</div>" +
                     "<p >" + parsedData[x].encoded_key + "</p>" +
-                    "</div>"+
+                    "</div>" +
                     "<button class='btn roberto-btn w-100' id='key_delete_" + parsedData[x].no + "'>삭제</button>" +
                     "</div>";
             }
@@ -315,8 +347,8 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on("click", "button[id^='key_delete_']", function(){ 
-        var id = $(this).attr("id"); 
+    $(document).on("click", "button[id^='key_delete_']", function () {
+        var id = $(this).attr("id");
         var key_no = id.replace("key_delete_", "");
 
         if (key_no) {
@@ -329,7 +361,7 @@ $(document).ready(function () {
             });
         } else {
             alert("정상적인 경로가 아닙니다. 다시 시도해주세요.");
-        }  
+        }
     });
 
 

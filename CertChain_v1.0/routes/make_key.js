@@ -30,7 +30,7 @@ router.post('/', function (req, res, next) {
             let conn = mysql.createConnection({
                 host: 'localhost',
                 user: 'root',
-                password: 'admin',
+                password: 'mysql',
                 database: 'nodejs'
             });
 
@@ -42,9 +42,9 @@ router.post('/', function (req, res, next) {
                 console.log("DB연결됨");
                 const sql = `insert into certchain_key(account_no, encoded_key, memo) 
                              values((select no from certchain_account 
-                             where email='${req.session.email}'), '${encoded_key}', '${req.body.memo}')`;
+                             where email=?), ?, ?)`;
                 console.log(sql);
-                conn.query(sql, (err, result, fields) => {
+                conn.query(sql, [req.session.email, encoded_key, req.body.memo], (err, result, fields) => {
                     if (err) {
                         console.error(err.message);
                     } else {
