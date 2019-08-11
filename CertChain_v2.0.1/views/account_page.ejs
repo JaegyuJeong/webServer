@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <% include header %>
+
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <% if(loginState && account_page_state){ %>
+                    <div class="single-widget-area mb-100">
+                        <div class="newsletter-form">
+                            <h5>회원정보수정</h5>
+                            <p>비밀번호수정</p>
+                            기존 비밀번호<input type="password" id="old_pw" class="form-control"
+                                placeholder="기존 비밀번호를 입력해주세요.">
+                            새 비밀번호<input type="password" id="new_pw1" class="form-control"
+                                placeholder=" 새 비밀번호를 입력해주세요.">
+                            새 비밀번호 확인<input type="password" id="new_pw2" class="form-control"
+                                placeholder="새 비밀번호를 다시 한 번 입력해주세요">
+                            <button class="btn roberto-btn w-100" id="update_pw_btn">비밀번호 수정</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Post -->
+                    <div class="single-widget-area mb-100">
+                        <h4 class="widget-title mb-30">회원탈퇴</h4>
+                        <button type="button" class="btn roberto-btn w-100" id="delete_account_btn">탈퇴하기</button>
+                    </div>
+
+                    <% }else{ %>
+                    <div class="single-widget-area mb-100">
+                        <div class="newsletter-form">
+                            <h5>회원정보수정</h5>
+                            보안을 위해 비밀번호를 입력해주세요<input type="password" id="account_page_pw" class="form-control"
+                                placeholder="비밀번호">
+                            <button id="account_page_pw_btn" type="button" class="btn roberto-btn w-100">확인</button>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Area End -->
+
+    <% include footer %>
+
+    <!— **** All JS Files ***** —>
+        <!— jQuery 2.2.4 —>
+            <script src="js/jquery.min.js"></script>
+            <!— Popper —>
+                <script src="js/popper.min.js"></script>
+                <!— Bootstrap —>
+                    <script src="js/bootstrap.min.js"></script>
+                    <!— All Plugins —>
+                        <script src="js/roberto.bundle.js"></script>
+                        <!— Active —>
+                            <script src="js/default-assets/active.js"></script>
+                            <!— Main Javascript —>
+                                <script src="js/main.js"></script>
+
+</body>
+
+</html>
