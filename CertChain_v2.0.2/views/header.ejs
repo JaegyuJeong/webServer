@@ -1,0 +1,261 @@
+<% if(!loginState){ %>
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                                class="fas fa-user mr-1"></i>
+                            로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                class="fas fa-user-plus mr-1"></i>
+                            회원가입</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1" id="login_result">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fas fa-envelope prefix"></i>
+                                <input type="email" id="login_email" class="form-control form-control-sm validate"
+                                    placeholder="이메일">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10"></label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fas fa-lock prefix"></i>
+                                <input type="password" id="login_pw" class="form-control form-control-sm validate"
+                                    placeholder="비밀번호">
+                                <label data-error="wrong" data-success="right" for="modalLRInput11"></label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <% if(loginCount>=4){ %>
+                                    <div class="g-recaptcha" data-sitekey="6Lf5u7EUAAAAAOAlSNtssnu4z8BtyFBe-iENt30l"></div>
+                                    <p style='color:red; font-size:14px; font-weight:bold'>5회 이상 틀렸습니다. 매크로 방지 체크박스를 체크해주세요.</p>
+                                <% } %>          
+                                <button class="btn btn-info" id="login_btn">로그인 <i
+                                        class="fas fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>회원이 아니신가요? <a href="#" class="blue-text">회원가입</a></p>
+                                <p>비밀번호를 잊어버렸나요? <a href="#" class="blue-text">비밀번호 찾기</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal"
+                                id="login_close_btn">닫기</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body" id="register_result">
+                            <div style="height: 75px; margin:0px">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fas fa-envelope prefix"></i>
+                                    <input type="email" id="register_name" class="form-control form-control-sm validate"
+                                        placeholder="이름">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput11"></label>
+                                </div>
+                            </div>
+
+                            <div style="height: 75px; margin:0px">
+                                <div class="md-form form-sm mb-5" style="width:78% ; display: inline-block; ">
+                                    <i class="fas fa-envelope prefix"></i>
+                                    <input type="email" id="register_email"
+                                        class="form-control form-control-sm validate" placeholder="이메일">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput12"></label>
+                                </div>
+                                <button class="btn btn-info" id="dup_check_btn"
+                                    style="font-size: 12px; width:75px; height: 35px; right: 0px; display: inline-block;">
+                                    중복확인</button>
+                            </div>
+                            <!-- 중복확인 message -->
+                            <div style="padding-left: 30px; height: 20px; margin:0px" id="alert_duplication"></div>
+                            <div class="md-form form-sm mb-5">
+                                <i class="fas fa-lock prefix"></i>
+                                <input type="password" id="register_pw" class="form-control form-control-sm validate"
+                                    placeholder="비밀번호">
+                                <label data-error="wrong" data-success="right" for="modalLRInput13"></label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fas fa-lock prefix"></i>
+                                <input type="password" id="register_pw_check"
+                                    class="form-control form-control-sm validate" placeholder="비밀번호 확인">
+                                <label data-error="wrong" data-success="right" for="modalLRInput14"></label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2" >
+                                <div class="g-recaptcha" data-sitekey="6Lf5u7EUAAAAAOAlSNtssnu4z8BtyFBe-iENt30l"></div>
+                                <button class="btn btn-info" id="register_btn">가입하기 <i
+                                        class="fas fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">이미 회원이신가요? <a href="#" class="blue-text">로그인</a>
+                                </p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal"
+                                id="register_close_btn">닫기</button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<!-- Login Modal End -->
+<% } %> 
+
+
+
+<!-- Header Area Start -->
+<header class="header-area">
+    <!-- Search Form -->
+    <div class="search-form d-flex align-items-center">
+        <div class="container">
+            <form action="index.html" method="get">
+                <input type="search" name="search-form-input" id="searchFormInput" placeholder="Type your keyword ...">
+                <button type="submit"><i class="icon_search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Top Header Area Start -->
+    <div class="top-header-area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="top-header-content">
+                        <a href="#"><i class="icon_phone"></i> <span><% if(loginState){ %> <%= name %>님
+                                환영합니다!<% }else{ %> <%
+                        } %></span></a>
+                        <a href="#"><i class="icon_mail"></i> <span><% if(loginState){ %> <%= email %> <% }else{ %>
+                                로그인을 해주세요 <%
+                        } %></span></a>
+                        <a href="account_page"><i class="icon_mail"></i> <span><% if(loginState){ %> 회원정보수정
+                                <% }%></span></a>
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+                    <div class="top-header-content">
+                        <!-- Top Social Area -->
+                        <div class="top-social-area ml-auto">
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Top Header Area End -->
+
+
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="robertoNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href="/"><img src="/img/logo/certchain_logo0.png " height='100px' width='140px'
+                            alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class="active"><a href="/">홈</a></li>
+                                <li><a href="about">소개</a></li>
+                                <% if(loginState){ %>
+                                <li><a href="key_check_page">키 조회</a></li>
+                                <li><a href="key">키 발급</a></li>
+                                <li><a href="box">보관함</a></li>
+                                <% }else{ %>
+                                <li><a href="#" onclick="alert('로그인이 필요한 서비스입니다.')">키 조회</a></li>
+                                <li><a href="#" onclick="alert('로그인이 필요한 서비스입니다.')">키 발급</a></li>
+                                <li><a href="#" onclick="alert('로그인이 필요한 서비스입니다.')">보관함</a></li>
+                                <% } %>
+
+                                <!--
+                                <li><a href="#">자격&증명 발급</a>
+                                    <ul class="dropdown">
+                                        <li><a href="cert_make1">- 증명서발급</a></li>
+                                        <li><a href="cert_make2">- 자격증발급</a></li>
+                                        <li><a href="cert_make_etc">- 기타발급</a></li>
+                                    </ul>
+                                </li>
+                                -->
+                                <li><a href="cs">고객센터</a></li>
+                            </ul>
+
+                            <!-- Search 
+                            <div class="search-btn ml-4">
+                                <i class="fa fa-search" aria-hidden="true" ></i>
+                            </div> -->
+
+                            <!-- Login Button -->
+                            <div class="book-now-btn ml-3 ml-lg-5">
+                                <% if(loginState){ %>
+                                <a href="#" id="logout_btn">로그아웃 <i class="fa fa-long-arrow-right"
+                                        aria-hidden="true"></i></a>
+                                <% }else{ %>
+                                <a id="login_page_btn" data-toggle="modal" data-target="#modalLRForm">로그인 <i
+                                        class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                <% } %>
+
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header Area End -->
