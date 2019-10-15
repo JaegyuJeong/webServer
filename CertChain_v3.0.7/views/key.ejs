@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <% include header %>
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Newsletter -->
+                    <div class="single-widget-area mb-100">
+                        <div class="newsletter-form">
+                            <h5>커리어 보관 키 발급</h5>
+                            <p>키의 유효기간은 6개월 입니다.</p>
+                           
+                            비밀번호<input type="password" name="key_password" id="key_password" class="form-control"
+                                placeholder="키 발급 보안을 위해 사용자 비밀번호를 다시 한 번 입력해주세요">
+                            <button id="key_encode_btn" type="button" class="btn roberto-btn w-100">키 발급</button>
+
+                        </div>
+                    </div>
+
+                    <!-- Recent Post -->
+                    <div class="single-widget-area mb-100">
+                        <h4 class="widget-title mb-30">내가 발급받은 키 목록</h4>
+                        <button type="button" class="btn roberto-btn w-100" id="key_search_btn">발급된 키 조회</button>
+
+                        <!-- Single Recent Post -->
+                        <span id="key_list"></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Blog Area End -->
+
+    <% include footer %>
+
+    <!— **** All JS Files ***** —>
+    <!— jQuery 2.2.4 —>
+    <script src="js/jquery.min.js"></script>
+    <!— Popper —>
+    <script src="js/popper.min.js"></script>
+    <!— Bootstrap —>
+    <script src="js/bootstrap.min.js"></script>
+    <!— All Plugins —>
+    <script src="js/roberto.bundle.js"></script>
+    <!— Active —>
+    <script src="js/default-assets/active.js"></script>
+    <!— Main Javascript —>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

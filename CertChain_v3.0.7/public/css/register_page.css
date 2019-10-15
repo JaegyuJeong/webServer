@@ -1,0 +1,16 @@
+ .joinWrap {overflow:hidden; _zoom:1; background: url(/monimg/login/join_welcome.png) 0 0 no-repeat; width:720px; height: 600px; margin: 0 auto; margin-top: 60px;}
+ .joinWrap .title {padding:10px 0 70px 0; text-align:center; font-family:"Malgun Gothic","¸¼Àº °íµñ",dotum, "µ¸¿ò" ,sans-serif; font-size:30px; color:#555e67; letter-spacing:-1px;}
+ .joinWrap .title em {font-weight:bold; color:#193c52;}
+ .joinWrap .gTxt {text-align: center; font-size: 18px; font-family:"Malgun Gothic","¸¼Àº °íµñ",dotum, "µ¸¿ò" ,sans-serif; letter-spacing: -1px; color: #222; font-weight: 600; line-height: 24px;}
+ .joinWrap .gTxt span.subscript {font-size: 14px; font-weight: normal; }
+ .joinWrap .gTxt span.txt_gg_point {color: #1cc3b2;}
+ .joinWrap .gTxt span.txt_gi_point {color: #618bdf;}
+ .joinWrap .memGG {float:left;}
+ .joinWrap .memGI {float:right;}
+ .joinWrap p.txt {display: none;}
+ .joinWrap .memGI .txt_1 {margin-top:20px; padding:2px 0 2px 0px; font:12px  gulim, "±¼¸²", sans-serif;  color:#999999; /* background:url(/monimg/login/icon_login_spot_all.gif) no-repeat 0 6px; */}
+ .guideWrap {border-top: 2px solid #dedede; border-bottom: 1px solid #ededed; position:relative; margin:0 auto; margin-top: 35px; padding:30px 10px 30px 10px; width: 740px;box-sizing: border-box;}
+ .guideWrap h3 { font-size: 18px; letter-spacing: -1px; font-family:"Malgun Gothic","¸¼Àº °íµñ",dotum, "µ¸¿ò" ,sans-serif; }
+ .guideWrap p {position:absolute; top:30px; right:10px; padding:0 0 0 0px; }
+ .guideWrap ul {padding:15px 0 0 0;}
+ .guideWrap ul li{padding:0px 0 0px 0; color:#757575; line-height: 18px; }

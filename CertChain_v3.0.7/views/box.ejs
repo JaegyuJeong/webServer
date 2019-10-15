@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+
+    <% include header %>
+
+    <!-- File Download progress bar modal  start-->
+    <div id="preparing-file-modal" title="Preparing report..." style="display: none;">
+        문서 전송 중입니다. 잠시만 기다려주세요...
+     
+        <div class="ui-progressbar-value ui-corner-left ui-corner-right" style="width: 100%; height:22px; margin-top: 20px;"></div>
+    </div>
+    <div id="error-modal" title="Error" style="display: none;">
+        There was a problem generating your report, please try again.
+    </div>
+    <!-- File Download progress bar modal  end-->
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Recent Post -->
+                    <div class="single-widget-area mb-100">
+                        <h4 class="widget-title mb-30">내 커리어</h4>
+                        <button type="button" class="btn roberto-btn w-100" id="doc_search_btn">보관중인 커리어 조회</button>
+
+                        <!-- Single Recent Post -->
+                        <span id="doc_list"></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Blog Area End -->
+
+    <% include footer %>
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/roberto.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+
+    <script src='/js/filedownload.js' ></script>
+    <!-- Main Javascript -->
+    <script src="js/main.js"></script>
+
+   
+
+</body>
+
+</html>

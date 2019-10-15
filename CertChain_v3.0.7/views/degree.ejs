@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <% include header %>
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Newsletter -->
+                    <div class="single-widget-area mb-100">
+                        <div class="newsletter-form">
+                            <h5>졸업증명서/ 졸업예정증명서 발급하기</h5>
+                            <p>증명서를 발급할 수 있습니다. <br>발급된 증명서는 평생 보관됩니다.</p>
+                                증명서 종류
+                                <div>
+                                    <select id="degree_type">
+                                        <option value="">증명서선택</option>
+                                        <option value="normal">졸업증명서</option>
+                                        <option value="expected">졸업예정증명서</option>
+                                    </select>
+                                </div>
+                            <br><br>
+                            성 명
+                            <input type="text" id="degree_name" class="form-control" placeholder="이름을 입력해주세요.">
+                            생년월일
+                            <input type="date" id="degree_birth" class="form-control">
+                            학 과
+                            <input type="text" id="degree_dept" class="form-control" placeholder="학과를 입력해주세요.">
+                            졸업일자
+                            <input type="date" id="degree_date" class="form-control">
+                            학위명
+                            <input type="text" id="degree_degree" class="form-control" placeholder="학위명을 입력해주세요.">
+                            학위번호
+                            <input type="text" id="degree_code" class="form-control" placeholder="학위번호를 입력해주세요.">
+                            발급대상 키
+                            <input type="text" id="degree_key" class="form-control" placeholder="키를 입력해주세요.">
+                            <button class="btn roberto-btn w-100" id="degree_insert_btn">증명서 발급</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Blog Area End -->
+
+    <% include footer %>
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/roberto.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+
+    <!-- Main Javascript -->
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
