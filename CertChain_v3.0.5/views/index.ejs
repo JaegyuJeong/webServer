@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <% include header %>
+
+    <!-- Welcome Area Start -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay"
+                style="background-image: url(img/bg-img/blockchain1.jpg);" data-img-url="img/more.png">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12">
+                                <div class="welcome-text text-center">
+                                    <h6 data-animation="fadeInLeft" data-delay="200ms">자격 &amp; 증명 인증 서비스</h6>
+                                    <h2 data-animation="fadeInLeft" data-delay="500ms">Cert Chain을 이용해보세요</h2>
+                                    <a href="#" id="register_form2" class="btn roberto-btn btn-2"
+                                        data-animation="fadeInLeft" data-delay="800ms">가입하기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay"
+                style="background-image: url(img/bg-img/blockchain2.jpg);" data-img-url="img/more.png">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12">
+                                <div class="welcome-text text-center">
+                                    <h6 data-animation="fadeInUp" data-delay="200ms">자격 &amp; 증명 인증 서비스</h6>
+                                    <h2 data-animation="fadeInUp" data-delay="500ms">이용방법이 궁금하신가요?</h2>
+                                    <a href="about" class="btn roberto-btn btn-2" data-animation="fadeInUp"
+                                        data-delay="800ms">알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay"
+                style="background-image: url(img/bg-img/blockchain3.jpg);" data-img-url="img/more.png">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12">
+                                <div class="welcome-text text-center">
+
+                                    <% if(loginState){ %>
+
+                                    <h6 data-animation="fadeInDown" data-delay="200ms">자격 &amp; 증명 인증 서비스</h6>
+                                    <h2 data-animation="fadeInDown" data-delay="500ms"><%=name%>님 환영합니다!</h2>
+                                    <a href="#" id="logout_btn" class="btn roberto-btn btn-2" data-toggle="modal"
+                                        data-target="#modalLRForm" data-animation="fadeInDown"
+                                        data-delay="800ms">로그아웃</a>
+
+                                    <% }else{ %>
+
+                                    <h6 data-animation="fadeInDown" data-delay="200ms">자격 &amp; 증명 인증 서비스</h6>
+                                    <h2 data-animation="fadeInDown" data-delay="500ms">로그인 후 이용해주세요</h2>
+                                    <a href="#" id="login_form2" class="btn roberto-btn btn-2" data-toggle="modal"
+                                        data-target="#modalLRForm" data-animation="fadeInDown"
+                                        data-delay="800ms">로그인</a>
+
+                                    <% } %>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Welcome Area End -->
+
+
+
+    <!-- About Us Area Start -->
+    <section class="roberto-about-area section-padding-100-0">
+        <div class="container mt-100">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <!-- Section Heading -->
+                    <div class="section-heading wow fadeInUp" data-wow-delay="100ms">
+                        <h6>About Us</h6>
+                        <h2>Welcome to <br>Cert Chain</h2>
+                    </div>
+                    <div class="about-us-content mb-100">
+                        <h5 class="wow fadeInUp" data-wow-delay="300ms">각종 증명서&자격증을 발급과 동시에 블록체인에 보관하여 위조방지가 가능하고 간편하게
+                            관리할 수 있습니다.</h5>
+                        <p class="wow fadeInUp" data-wow-delay="400ms">Manager: <span>CHOI YOUNGJIN</span></p>
+                        <img src="img/core-img/signature.png" alt="" class="wow fadeInUp" data-wow-delay="500ms">
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="about-us-thumbnail mb-100 wow fadeInUp" data-wow-delay="700ms">
+                        <div class="row no-gutters">
+                            <div class="col-6">
+                                <div class="single-thumb">
+                                    <img src="img/bg-img/blockchain1.jpg" alt="">
+                                </div>
+                                <div class="single-thumb">
+                                    <img src="img/bg-img/blockchain2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="single-thumb">
+                                    <img src="img/logo/certchain_logo3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Area End -->
+
+    <!-- Service Area Start -->
+    <div class="roberto-service-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="service-content d-flex align-items-center justify-content-between">
+                        <!-- Single Service Area -->
+                        <div class="single-service--area mb-100 wow fadeInUp" data-wow-delay="100ms">
+                            <img src="img/key.png" alt="">
+                            <h5>키</h5>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service--area mb-100 wow fadeInUp" data-wow-delay="300ms">
+                            <img src="img/certification.png" alt="">
+                            <h5>발급</h5>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service--area mb-100 wow fadeInUp" data-wow-delay="500ms">
+                            <img src="img/box-filled.png" alt="">
+                            <h5>보관함</h5>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service--area mb-100 wow fadeInUp" data-wow-delay="700ms">
+                            <img src="img/customer-service.png" alt="">
+                            <h5>고객센터</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service Area End -->
+
+    <% include footer %>
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/roberto.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+    <!-- Main Javascript -->
+    <script src="js/main.js"></script>
+    <!-- reCaptcha Javascript -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+
+</html>
