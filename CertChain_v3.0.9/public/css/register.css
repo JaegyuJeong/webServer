@@ -1,0 +1,10 @@
+.modal-dialog{max-width:800px;margin:1.75rem auto}
+.light-blue.darken-1{background-color:#1cc3b2!important}
+.light-blue.darken-2{background-color:#1cc3b2!important}
+.light-blue.darken-3{background-color:#1cc3b2!important}
+.light-blue.darken-4{background-color:#1cc3b2!important}
+
+.btn-info{color:#fff;background-color:#1cc3b2;border-color:#1cc3b2}
+.btn-info:hover{color:#fff;background-color:#138496;border-color:#117a8b}
+.btn-info.focus,.btn-info:focus{box-shadow:0 0 0 .2rem rgba(58,176,195,.5)}
+.btn-info.disabled,.btn-info:disabled{color:#fff;background-color:#17a2b8;border-color:#17a2b8}

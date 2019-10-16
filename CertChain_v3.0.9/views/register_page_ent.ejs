@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+
+</head>
+
+<body>
+
+    <% include header %>
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+
+                    <div class="modal-dialog cascading-modal" role="document">
+                        <!--Content-->
+                        <div class="modal-content">
+
+                            <!--Modal cascading tabs-->
+                            <div class="modal-c-tabs">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                                class="fas fa-user-plus mr-1"></i>
+                                            기관회원가입</a>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab panels -->
+                                <div class="tab-content">
+                                    <!--Panel 8-->
+                                    <div class="tab-pane fade in show active" id="panel8" role="tabpanel">
+
+                                        <!--Body-->
+                                        <div class="modal-body" id="register_result_ent">
+                                            <div style="height: 75px; margin:0px">
+                                                <div class="md-form form-sm mb-5"
+                                                    style="width:78% ; display: inline-block; ">
+                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <input type="email" id="register_org_email"
+                                                        class="form-control form-control-sm validate"
+                                                        placeholder="기관 대표 이메일">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12"></label>
+                                                </div>
+                                                <button class="btn btn-info" id="dup_check_btn"
+                                                    style="font-size: 14px; width:110px; height: 40px; margin: 15px; right: 0px; display: inline-block;">
+                                                    중복확인</button>
+                                            </div>
+                                            <!-- 중복확인 message -->
+                                            <div style="padding-left: 30px; height: 20px; margin:0px"
+                                                id="alert_duplication"></div>
+                                            <div class="md-form form-sm mb-5">
+                                                <i class="fas fa-lock prefix"></i>
+                                                <input type="password" id="register_org_pw"
+                                                    class="form-control form-control-sm validate" placeholder="비밀번호">
+                                                <label data-error="wrong" data-success="right"
+                                                    for="modalLRInput13"></label>
+                                            </div>
+
+                                            <div class="md-form form-sm mb-4">
+                                                <i class="fas fa-lock prefix"></i>
+                                                <input type="password" id="register_org_pw_check"
+                                                    class="form-control form-control-sm validate" placeholder="비밀번호 확인">
+                                                <label data-error="wrong" data-success="right"
+                                                    for="modalLRInput14"></label>
+                                            </div>
+                                            <br>
+                                            <hr><br>
+                                            <div style="height: 75px; margin:0px">
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <label style="width: 150px">기관 종류</label>
+                                                    <select id="register_org_type" class="form-control" >
+                                                        <option selected>선택</option>
+                                                        <option value="univ">학교</option>
+                                                        <option value="ent">기업</option>
+                                                        <option value="cert">자격증 발급기관</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div style="height: 75px; margin:0px">
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <input type="text" id="register_org_name"
+                                                        class="form-control form-control-sm validate" placeholder="기관명">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput11"></label>
+                                                </div>
+                                            </div>
+                                            <div style="height: 75px; margin:0px">
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <input type="text" id="register_org_boss"
+                                                        class="form-control form-control-sm validate"
+                                                        placeholder="대표자명">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput11"></label>
+                                                </div>
+                                            </div>
+                                            <div style="height: 75px; margin:0px">
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <input type="text" id="register_org_reg_num"
+                                                        class="form-control form-control-sm validate"
+                                                        placeholder="사업자등록번호">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput11"></label>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-center form-sm mt-2">
+                                                <div class="g-recaptcha"
+                                                    data-sitekey="6Lf5u7EUAAAAAOAlSNtssnu4z8BtyFBe-iENt30l"></div>
+                                                <button class="btn btn-info" id="register_org_btn">가입하기 <i
+                                                        class="fas fa-sign-in ml-1"></i></button>
+                                            </div>
+
+                                        </div>
+                                        <!--Footer-->
+                                        <div class="modal-footer">
+                                            <div class="options text-right">
+                                                <p class="pt-1">이미 회원이신가요? <a href="#" class="blue-text">로그인</a>
+                                                </p>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                                data-dismiss="modal" id="register_close_btn">돌아가기</button>
+                                        </div>
+                                    </div>
+                                    <!--/.Panel 8-->
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Area End -->
+
+
+    <% include footer %>
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/roberto.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+    <!-- Main Javascript -->
+    <script src="js/main.js"></script>
+    <!-- reCaptcha Javascript -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+
+</html>

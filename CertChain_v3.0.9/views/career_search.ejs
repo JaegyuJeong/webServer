@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> Cert Chain - 블록체인 자격증명 서비스 </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <% include header %>
+
+
+    <!-- Blog Area Start -->
+    <div class="roberto-news-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <h4 class='widget-title mb-30' style='font-size:26px'>조회한 키 값이 보유한 커리어 목록</h4>
+                    <!-- Newsletter -->
+                    <div class="single-widget-area mb-100">
+                        <div class="newsletter-form">
+                            조회할 회원의 키 값<input type="text" id="encoded_key" class="form-control"
+                                placeholder="조회할 키 값을 입력하세요">
+                            <button id="key_check_btn" type="button" class="btn roberto-btn w-100"> 조회</button>
+
+                        </div>
+                    </div>
+
+                    <!-- Recent Post -->
+                    <div class="single-widget-area mb-100">
+                        <!-- Single Recent Post -->
+                        <span id="career_search_reslut"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Area End -->
+
+    <% include footer %>
+
+    <!— **** All JS Files ***** —>
+    <!— jQuery 2.2.4 —>
+    <script src="js/jquery.min.js"></script>
+    <!— Popper —>
+    <script src="js/popper.min.js"></script>
+    <!— Bootstrap —>
+    <script src="js/bootstrap.min.js"></script>
+    <!— All Plugins —>
+    <script src="js/roberto.bundle.js"></script>
+    <!— Active —>
+    <script src="js/default-assets/active.js"></script>
+    <!— Main Javascript —>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
